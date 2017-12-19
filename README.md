@@ -91,7 +91,7 @@ Install extensions by going to the Extensions tab (or selecting Extensions from 
 Install the following extensions:
 * TSLint
 
-There is a good tutorial on using Visual Studio Code with React [https://code.visualstudio.com/docs/nodejs/reactjs-tutorial].
+There is a good tutorial on using [Visual Studio Code with React](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial).
 
 #### Debugging
 
