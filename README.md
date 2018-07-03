@@ -28,16 +28,22 @@ The folder / file layout this pattern uses is:
 
 You can run this project by cloning the git repo, then cd into the project folder.
 
-First install the required node modules:
+We use yarn instead of npm, so first:
 
 ```
-npm install
+npm -g install yarn
+```
+
+Then install the required node modules:
+
+```
+yarn install
 ```
 
 Then run it using:
 
 ```
-npm start
+yarn start
 ```
 
 ## Setup
@@ -60,15 +66,15 @@ cd <project>
 Install dependencies:
 
 ```
-npm install --save redux react-redux
-npm install --save-dev @types/react-redux
-npm install --save typescript-fsa-reducers typescript-fsa
+yarn add redux react-redux
+yarn add -D @types/react-redux
+yarn add typescript-fsa-reducers typescript-fsa
 ```
 
 Include the devtools:
 
 ```
-npm install --save redux-devtools-extension
+yarn add redux-devtools-extension
 ```
 
 Copy the template files by copying the `modules` folder from this
@@ -115,7 +121,7 @@ Create a file `.vscode/launch.json` with the following contents:
 }
 ```
 
-Then after running `npm start`, close the browser window it creates, then go to the Debug tab in VSCode and click the Play button.
+Then after running `yarn start`, close the browser window it creates, then go to the Debug tab in VSCode and click the Play button.
 
 ### Redux DevTools Extension
 
