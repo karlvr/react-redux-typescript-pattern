@@ -2,14 +2,14 @@
  * Container template for a component.
  */
 
- /* Import the component from the component path */
-import Component from '../components/example'
+/* Import the component from the component path */
+import Component from '../components/Example'
 
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
+import { Dispatch, Action } from 'redux'
 
 /* Import RootStoreState */
-import { RootStoreState } from '../../index'
+import { RootStoreState } from 'root/index'
 
 /* Import module actions */
 import * as actions from '../actions'
@@ -37,7 +37,7 @@ const mapStateToProps = (state: RootStoreState): Props => {
 }
 
 /** Populate the Actions with the callbacks for the component. */
-const mapDispatchToProps = (dispatch: Dispatch<{}>): Actions => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action>): Actions => ({
 	onExample: (value) => {
 		dispatch(actions.examplePrimitiveAction(value))
 	},
