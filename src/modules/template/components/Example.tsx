@@ -4,8 +4,8 @@
  * Note that this file has a `.tsx` suffix, as it contains React elements.
  */
 
-import * as React from 'react'
-import { Props, Actions } from '../containers/Example'
+import * as React from 'react';
+import { Props, Actions } from '../containers/Example';
 
 /**
  * Interface for private internal component state.

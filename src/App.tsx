@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { Provider } from 'react-redux'
-import { store } from 'root/index'
-import './App.css'
-import Example from 'template/containers/Example'
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './modules/root/index';
+import './App.css';
+import Example from './modules/template/containers/Example';
 
 const logo = require('./logo.svg')
 
@@ -22,4 +22,4 @@ class App extends React.Component {
 	}
 }
 
-export default App
+export default App;
