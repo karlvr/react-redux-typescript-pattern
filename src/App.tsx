@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { Provider } from 'react-redux'
-
 import { store } from 'root/index'
-
-import './App.css'
-
 import './App.css'
 import Example from 'template/containers/Example'
 
