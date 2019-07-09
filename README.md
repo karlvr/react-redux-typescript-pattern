@@ -10,7 +10,7 @@ You can also read the [original create-react-app README](README-CRA.md)
 
 The folder / file layout this pattern uses is:
 
-* `src/modules/index.ts` the root file for the Redux store and root reducer
+* `src/modules/root/index.ts` the root file for the Redux store and root reducer
 * `src/modules/<module>` app modules, containing components, containers, actions and reducers.
 * `src/modules/<module>/components` React components
 * `src/modules/<module>/containers` React component containers
