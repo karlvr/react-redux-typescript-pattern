@@ -4,11 +4,13 @@ This is a pattern for using React with Redux in TypeScript. This includes type-s
 
 React Components are wrapped in a Container that connects the Component to Redux. Interfaces are declared for the component's Props in the Container; split into `Props` and `Actions` to separate properties and action callbacks.
 
+You can also read the [original create-react-app README](README-CRA.md)
+
 ### Layout
 
 The folder / file layout this pattern uses is:
 
-* `src/modules/index.js` the root file for the Redux store and root reducer
+* `src/modules/index.ts` the root file for the Redux store and root reducer
 * `src/modules/<module>` app modules, containing components, containers, actions and reducers.
 * `src/modules/<module>/components` React components
 * `src/modules/<module>/containers` React component containers
@@ -28,54 +30,60 @@ The folder / file layout this pattern uses is:
 
 You can run this project by cloning the git repo, then cd into the project folder.
 
-We use yarn instead of npm, so first:
+Install the required node modules:
 
 ```
-npm -g install yarn
-```
-
-Then install the required node modules:
-
-```
-yarn install
+npm install
 ```
 
 Then run it using:
 
 ```
-yarn start
+npm start
 ```
 
 ## Setup
 
-This project was setup using [create-react-app](https://github.com/facebookincubator/create-react-app). You can setup your own project using the commands below.
-
-Install `create-react-app`:
-
-```
-npm install -g create-react-app
-```
+This project was setup using [create-react-app](https://github.com/facebook/create-react-app). You can setup your own project using the commands below.
 
 Create the project using `create-react-app`:
 
 ```
-create-react-app <project> --scripts-version=react-scripts-ts
+npx create-react-app <project> --use-npm --typescript
 cd <project>
 ```
+
+Setup [nvm](https://github.com/nvm-sh/nvm):
+
+```
+echo 10.15.3 > .nvmrc
+nvm use
+```
+
+We use `nvm` for managing the versions of node and npm that we use on the project. It is important that you always run `nvm use` before you start running `npm`, so that you use the right version of node when installing dependencies and running the project.
+
+If `nvm` complains about the right version of node not being available, run `nvm install`.
 
 Install dependencies:
 
 ```
-yarn add redux react-redux
-yarn add -D @types/react-redux
-yarn add typescript-fsa-reducers typescript-fsa
+npm install --save redux react-redux typescript-fsa-reducers typescript-fsa
+npm install --save-dev @types/react-redux
 ```
 
 Include the devtools:
 
 ```
-yarn add redux-devtools-extension
+npm install --save redux-devtools-extension
 ```
+
+Edit `tsconfig.json` and add to the `compilerOptions`:
+
+```
+"baseUrl": "src",
+```
+
+This enables us to use imports relative to the root of our source directory, no matter where the file we're authoring is located, e.g. `import Example from 'modules/template/containers/Example'`.
 
 Copy the template files by copying the `modules` folder from this
 repository into your new project:
@@ -88,16 +96,20 @@ Then look at the `src/App.tsx` in this pattern to see how to include the example
 
 ### IDE
 
-Any development environment should suffice. I use [Visual Studio Code](https://code.visualstudio.com).
-
-Download and install VSCode.
-
-Install extensions by going to the Extensions tab (or selecting Extensions from the View menu).
-
-Install the following extensions:
-* TSLint
+Download and install [Visual Studio Code](https://code.visualstudio.com).
 
 There is a good tutorial on using [Visual Studio Code with React](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial).
+
+#### Linting
+
+Install the following extensions:
+* ESLint
+
+Copy the `.eslintrc.json` and `.vscode/settings.json` files.
+
+These files setup my standard linting rules and enable them in VS Code.
+
+More information about this setup is available from https://facebook.github.io/create-react-app/docs/setting-up-your-editor
 
 #### Debugging
 
@@ -121,7 +133,7 @@ Create a file `.vscode/launch.json` with the following contents:
 }
 ```
 
-Then after running `yarn start`, close the browser window it creates, then go to the Debug tab in VSCode and click the Play button.
+Then after running `npm start`, close the browser window it creates, then go to the Debug tab in VSCode and click the Play button.
 
 ### Redux DevTools Extension
 

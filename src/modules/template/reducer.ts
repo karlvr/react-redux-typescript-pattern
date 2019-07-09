@@ -30,7 +30,7 @@ export const reducer = reducerWithInitialState(INITIAL_STATE)
 
 /** Reducer function for the exampleAction that returns a new state using an implicit return. */
 reducer.case(actions.exampleAction, (state, payload) => ({
-	...state, name: payload.value
+	...state, name: payload.value,
 }))
 
 /** Reducer function for examplePrimitiveAction that returns a new state using an explicit return. */

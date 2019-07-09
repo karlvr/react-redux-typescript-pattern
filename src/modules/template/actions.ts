@@ -1,4 +1,4 @@
-import actionCreatorFactory, { Action } from 'typescript-fsa'
+import actionCreatorFactory from 'typescript-fsa'
 
 /**
  * The action creator for this module. Note that it contains the module name.
@@ -20,5 +20,5 @@ action elsewhere in the code.
 export interface ExampleWithMoreTypesActionPayload {
 	value: string
 }
-export type ExampleWithMoreTypesAction = Action<ExampleWithMoreTypesActionPayload>
 export const exampleWithMoreTypesAction = actionCreator<ExampleWithMoreTypesActionPayload>('EXAMPLE_MORE_TYPES')
+export type ExampleWithMoreTypesAction = ReturnType<typeof exampleWithMoreTypesAction>
