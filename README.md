@@ -46,6 +46,17 @@ npm start
 
 This project was setup using [create-react-app](https://github.com/facebook/create-react-app). You can setup your own project using the commands below.
 
+We use [`nvm`](https://github.com/nvm-sh/nvm) for managing the versions of node and npm that we use on the project:
+
+```
+nvm use 10.15.3
+```
+
+If `nvm` can't find that version of node use `nvm install 10.15.3` instead, then repeat `nvm use 10.15.3`.
+
+You can use whichever node version you wan't (I prefer LTS versions); we use `nvm` to ensure that we are
+consistent across machines / people.
+
 Create the project using `create-react-app`:
 
 ```
@@ -53,14 +64,16 @@ npx create-react-app <project> --use-npm --typescript
 cd <project>
 ```
 
-Setup [nvm](https://github.com/nvm-sh/nvm):
+Setup [nvm](https://github.com/nvm-sh/nvm) inside the project itself, so all users of the project can
+use `nvm` to get the right node version for the project:
 
 ```
 echo 10.15.3 > .nvmrc
-nvm use
 ```
 
-We use `nvm` for managing the versions of node and npm that we use on the project. It is important that you always run `nvm use` before you start running `npm`, so that you use the right version of node when installing dependencies and running the project.
+Now when we run `nvm use` inside the project we'll get the right version of node for the project.
+
+It is important that you always run `nvm use` before you use `npm`, so that you use the right version of node when installing dependencies and running the project.
 
 If `nvm` complains about the right version of node not being available, run `nvm install`.
 
