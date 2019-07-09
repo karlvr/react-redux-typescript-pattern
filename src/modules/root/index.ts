@@ -1,9 +1,9 @@
-import { createStore, combineReducers, compose } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction';
+import { createStore, combineReducers, compose } from 'redux'
+import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction'
 
 /* Import reducers from our modules */
-import * as template from '../template/reducer';
-// import * as another from '../modules/another/reducers';
+import * as template from '../template/reducer'
+// import * as another from '../modules/another/reducers'
 
 /**
  * The root store state. Include sub-states for all of the modules / ducks.
@@ -35,4 +35,4 @@ const enhancers = compose(
  * Create the store. We do not include an initial state, as each of the module / duck
  * reducers includes its own initial state.
  */
-export const store = createStore(reducer, enhancers);
+export const store = createStore(reducer, enhancers)
