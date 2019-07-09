@@ -24,6 +24,30 @@ The folder / file layout this pattern uses is:
 * [typescript-fsa-reducers](https://github.com/dphilipson/typescript-fsa-reducers) (type-safe reducers for flux standard actions)
 * [redux-devtools-extension](http://extension.remotedev.io) (debug Redux)
 
+## Upgrade from older version
+
+After you have pulled the new version, you can upgrade from older version simply using the followings npm commands:
+
+Uninstal the old react-scripts-ts:
+```
+npm uninstall react-scripts-ts
+```
+
+Installing the new react-scripts:
+```
+npm i react-scripts@latest
+```
+
+Installing the updated node modules dependencies:
+```
+npm i
+```
+
+Then run it using:
+```
+npm start
+```
+
 ## Running
 
 You can run this project by cloning the git repo, then cd into the project folder.
@@ -59,7 +83,12 @@ npm install -g create-react-app
 Create the project using `create-react-app`:
 
 ```
-create-react-app <project> --scripts-version=react-scripts-ts
+npx create-react-app <project> --typescript
+
+# or
+
+yarn create react-app <project> --typescript
+
 cd <project>
 ```
 
