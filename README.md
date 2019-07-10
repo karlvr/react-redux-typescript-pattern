@@ -22,9 +22,20 @@ The folder / file layout this pattern uses is:
 * [react](http://reactjs.org)
 * [redux](https://redux.js.org)
 * [react-redux](https://github.com/reactjs/react-redux) (connects React and Redux)
+* [immer](https://github.com/immerjs/immer) (immutable state)
 * [typescript-fsa](https://github.com/aikoven/typescript-fsa) (type-safe creators for flux standard actions)
 * [typescript-fsa-reducers](https://github.com/dphilipson/typescript-fsa-reducers) (type-safe reducers for flux standard actions)
 * [redux-devtools-extension](http://extension.remotedev.io) (debug Redux)
+
+### Immer / Immutability
+
+Immer provides us with guaranteed immutability without being intrusive like [`immutablejs`](https://github.com/immutable-js/immutable-js).
+
+We combine it with a TypeScript conditional type called `DeepReadonly`, which makes all of our types `readonly` at compile-time
+as well.
+
+You can see Immer at work in the reducers. It not only ensures immutable output, it also simplifies the writing of reducers as
+we no longer need to use object spreading.
 
 ## Running
 
@@ -80,7 +91,7 @@ If `nvm` complains about the right version of node not being available, run `nvm
 Install dependencies:
 
 ```
-npm install --save redux react-redux typescript-fsa-reducers typescript-fsa
+npm install --save redux react-redux typescript-fsa-reducers typescript-fsa immer
 npm install --save-dev @types/react-redux
 ```
 

@@ -1,4 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
+import { produce } from 'immer'
 
 /* Import our module's actions */
 import * as actions from './actions'
@@ -9,19 +10,21 @@ import * as actions from './actions'
  * All of the properties in the interface should be annotated `readonly`, as should
  * all of the properties down the tree.
  */
-export interface StoreState {
-	readonly name: string
+interface MutableStoreState {
+	name: string
 }
+
+export type StoreState = DeepReadonly<MutableStoreState>
 
 /**
  * The initial store state for this module.
  */
-const INITIAL_STATE: StoreState = {
+const INITIAL_STATE: StoreState = produce({
 	/* Note that we end each property with a comma, so we can add new properties without modifying this line
 	(improve your git diffs!).
 	 */
 	name: 'React + Redux + Typescript pattern',
-}
+}, () => {})
 
 /**
  * Reducer function for this module.
@@ -29,11 +32,11 @@ const INITIAL_STATE: StoreState = {
 export const reducer = reducerWithInitialState(INITIAL_STATE)
 
 /** Reducer function for the exampleAction that returns a new state using an implicit return. */
-reducer.case(actions.exampleAction, (state, payload) => ({
-	...state, name: payload.value,
+reducer.case(actions.exampleAction, (state, payload) => produce(state, draft => {
+	draft.name = payload.value
 }))
 
 /** Reducer function for examplePrimitiveAction that returns a new state using an explicit return. */
-reducer.case(actions.examplePrimitiveAction, (state, name) => {
-	return { ...state, name }
-})
+reducer.case(actions.examplePrimitiveAction, (state, name) => produce(state, draft => {
+	draft.name = name
+}))

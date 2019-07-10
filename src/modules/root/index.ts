@@ -1,27 +1,8 @@
-import { createStore, combineReducers, compose } from 'redux'
+import { createStore, compose } from 'redux'
 import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction'
+import { StoreState as RootStoreState, reducer } from './reducer'
 
-/* Import reducers from our modules */
-import * as template from 'modules/template/reducer'
-// import * as another from '../modules/another/reducers';
-
-/**
- * The root store state. Include sub-states for all of the modules / ducks.
- * All of these should be annotated `readonly`, as should everything down
- * the tree of StoreState interfaces, and their contents.
- */
-export interface RootStoreState {
-	readonly template: template.StoreState
-	// readonly another: another.StoreState;
-}
-
-/**
- * The root reducer, combines reducers for all of the modules / ducks.
- */
-const reducer = combineReducers<RootStoreState>({
-	template: template.reducer,
-	// another: another.reducer,
-})
+export type RootStoreState = RootStoreState
 
 /**
  * Enhancers for the store.
