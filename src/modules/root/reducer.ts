@@ -10,8 +10,8 @@ import * as template from 'modules/template/reducer'
  * the tree of StoreState interfaces, and their contents.
  */
 interface MutableStoreState {
-	readonly template: template.StoreState
-	// readonly another: another.StoreState;
+	template: template.StoreState
+	// another: another.StoreState;
 }
 
 export type StoreState = DeepReadonly<MutableStoreState>
