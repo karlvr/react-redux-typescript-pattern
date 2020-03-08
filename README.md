@@ -132,12 +132,10 @@ There is a good tutorial on using [Visual Studio Code with React](https://code.v
 
 #### Linting
 
-Install the following extensions:
+Install the following VSCode extensions:
 * ESLint
 
-Copy the `.eslintrc.json` and `.vscode/settings.json` files.
-
-These files setup my standard linting rules and enable them in VS Code.
+Copy the `.eslintrc.js` and `.vscode/settings.json` files. These files setup my standard linting rules and enable them in VS Code.
 
 More information about this setup is available from https://facebook.github.io/create-react-app/docs/setting-up-your-editor
 
