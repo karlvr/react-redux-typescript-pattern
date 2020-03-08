@@ -24,7 +24,7 @@ const INITIAL_STATE: StoreState = produce({
 	(improve your git diffs!).
 	 */
 	name: 'React + Redux + Typescript pattern',
-}, () => {})
+}, draft => draft)
 
 /**
  * Reducer function for this module.

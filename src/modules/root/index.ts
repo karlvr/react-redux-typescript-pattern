@@ -1,8 +1,8 @@
 import { createStore, compose } from 'redux'
 import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction'
-import { StoreState as RootStoreState, reducer } from './reducer'
+import { StoreState as _RootStoreState, reducer } from './reducer'
 
-export type RootStoreState = RootStoreState
+export type RootStoreState = _RootStoreState
 
 /**
  * Enhancers for the store.

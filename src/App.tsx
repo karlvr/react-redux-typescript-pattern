@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Example from 'modules/template/containers/Example'
+import Example from 'modules/example/components/Example'
 import { Provider } from 'react-redux'
 import { getStore } from 'modules/root'
 

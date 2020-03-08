@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 /* Import reducers from our modules */
-import * as template from 'modules/template/reducer'
+import * as example from 'modules/example/reducer'
 // import * as another from '../modules/another/reducers';
 
 /**
@@ -10,7 +10,7 @@ import * as template from 'modules/template/reducer'
  * the tree of StoreState interfaces, and their contents.
  */
 interface MutableStoreState {
-	template: template.StoreState
+	example: example.StoreState
 	// another: another.StoreState;
 }
 
@@ -20,6 +20,6 @@ export type StoreState = DeepReadonly<MutableStoreState>
  * The root reducer, combines reducers for all of the modules / ducks.
  */
 export const reducer = combineReducers<StoreState>({
-	template: template.reducer,
+	example: example.reducer,
 	// another: another.reducer,
 })
